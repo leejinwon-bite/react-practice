@@ -1,4 +1,52 @@
-.App {
+
+
+* {
+  margin: 0;
+  padding: 0;  /*모든 요소 padding, width를 따로 지정하기 위해서 모두 0으로
+  초기화 시켜 놓은거임.*/
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+}
+
+/* ------------------- 헤더 영역 ------------------ */
+
+header {
+  width: 100%; /*화면의 전체 크기가 세로 비율이 항상 작더라. 원래
+  width는 height랑 다르게 vh, %써봣자. 반응형이 아예 안된다. 그냥 이런 특성이
+  있는 거임. 그래서 모바일 같은 경우에는 이미지가 잘려져서 나옴. 
+  height보다 작게 해봤자. 그냥 이미지가 잘리기만 할 뿐 이었음. height,
+  width랑 모두 vh 을 쓰면 최대 크기가 height로 맞춰지기 때문에 width는
+  100%로 해야 옳음.*/
+  height: 100vh; /*header는 원래 맨위에 조금만 차지하는 애인데, 100%로
+  하면은 원래 기본값 width를 의미하는 거고, 100vh은 화면의 맨위에서 맨아래
+  를 의미함.*/
+  background: linear-gradient(rgba(0,0,0,0.7),
+   rgba(0, 0, 0, 0.7)), url(images/header-bg.jpg) center no-repeat;
+  background-size: cover; /* 반응형임. 이거 안해주면 화면의 크기가
+  달라지면 이미지 자체가 잘라져서 안보인다. 이거 해주면 화면의 크기가 달라져도
+  이미지도 같이 크기가 달라지는 체로 전체 이미지는 보여짐. */
+  padding: 10px 8px; /*글자가 너무 왼쪽끝에 붙어있어서 떨어뜨릴려고*/
+  position: relative;
+}
+
+nav {
+  display: flex; /*블록레벨 요소 h1, div가 수직으로 정렬되어 있어서
+  얘내를 수평으로 맞추기 위해 사용한거임. 인라인 레벨요소로 만든거임.*/
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+i {
+  margin-right: 8px;
+}
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +83,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
