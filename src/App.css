@@ -175,8 +175,9 @@ section h3 {
   background: linear-gradient(to right, rgb(101, 28, 61, 0.9) 0%,
   rgba(40, 10, 43, 0.5) 60%), url(images/membership-bg.png)
   no-repeat right center;  /*center 빼도 똑같은데 왜쓰는 건지 모름*/
-  padding: 60px 40px;
+  /* padding: 30px 20px; */
   margin-bottom: 40px;
+  padding: 40px;
 }
 
 .membership-content p {
@@ -185,6 +186,52 @@ section h3 {
   margin-bottom: 30px;
 }
 
+/*--------------선택 가이드 영역 ------------------*/
+
+#choice {
+  margin: 20px 20px;
+ 
+}
+
+
+ #choice p {
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 30px;
+}
+
+.choice-content {
+  display: flex;
+  /* justify-content: space-evenly; */
+  flex-wrap: wrap;
+  /* align-items: center; */
+  gap: 30px;
+}
+
+ .card {
+   flex: 1; /*<<<<== 요거 하면 이미지 자체가 안보이게 됨. */
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+   background: linear-gradient(to bottom, rgba(25, 32, 68, 1) 0%,
+ rgba(32, 19, 34, 1) 62%); 
+  padding: 10px;
+  height: 150px;
+  width: 150px;
+  position: relative;
+} 
+
+.bean-img {
+  width: 20px;
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+} 
+
+.bean-img img {
+  width: 100%;
+  height: 30px;
+} 
 
 
 /* .App {

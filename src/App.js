@@ -3,6 +3,7 @@ import './App.css';
 import BannerL from "./banner/BannerL.js";
 import Header from './header/Header.js';
 import Membership from './banner/Membership.js';
+import CardArea from './banner/CardArea.js';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Header/>
       <BannerL/>
       <Membership/>
+      <CardArea/>
     </body>
     // <div className="App">
     //   <header className="App-header">
