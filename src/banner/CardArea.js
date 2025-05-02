@@ -3,7 +3,7 @@ import "../App.css";
 const CardArea = () => {
     return (
         <div id="choice">
-            <h2>타입별 선택 가이드</h2>
+            <h2 className="title">타입별 선택 가이드</h2>
             <div className="choice-content">
                 <div className="card">
                     <h3>너티드 커피</h3>

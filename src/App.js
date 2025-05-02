@@ -4,6 +4,7 @@ import BannerL from "./banner/BannerL.js";
 import Header from './header/Header.js';
 import Membership from './banner/Membership.js';
 import CardArea from './banner/CardArea.js';
+import FAQ from './banner/FAQ.js';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <BannerL/>
       <Membership/>
       <CardArea/>
+      <FAQ/>
     </body>
     // <div className="App">
     //   <header className="App-header">

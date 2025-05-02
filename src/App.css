@@ -189,7 +189,7 @@ section h3 {
 /*--------------선택 가이드 영역 ------------------*/
 
 #choice {
-  margin: 20px 20px;
+  margin: 20px 20px auto;
  
 }
 
@@ -202,14 +202,18 @@ section h3 {
 
 .choice-content {
   display: flex;
-  /* justify-content: space-evenly; */
   flex-wrap: wrap;
-  /* align-items: center; */
   gap: 30px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.title {
+  margin-left: 10%;
 }
 
  .card {
-   flex: 1; /*<<<<== 요거 하면 이미지 자체가 안보이게 됨. */
+   /*<<<<== 요거 하면 이미지 자체가 안보이게 됨. */
   border: 0;
   outline: 0;
   border-radius: 10px;
@@ -232,6 +236,23 @@ section h3 {
   width: 100%;
   height: 30px;
 } 
+
+/* --------반응형 선택가이드 영역------------ */
+
+ @media all and (max-width: 500px) {
+  .card {
+    flex-basis: 100%;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 1220px) {
+  .card {
+    flex-basis: calc(50%-15px); /* calc에 50%만 들어가면, 요소가
+    2개나 3개로 배치가 안떨어지는 것을 볼 수 있음. 단 1px이라도 작아지면
+    그 옆에 다른 요소가 올 수 있음.*/
+  }
+} 
+
 
 
 /* .App {
