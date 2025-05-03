@@ -43,6 +43,18 @@ function FAQ() {
                         </p>
                     </div>
                 </li>
+                <li>
+                    <input type='radio' name='accordion' id='fourth'></input>
+                    <label for='fourth'>원두 추천해 줄 수 있나요?</label>
+                    <div className='content'>
+                        <p>'로스터가 추천하는 커피'를 선택하시면 고객님과 상담후
+                            고객님께 맞는 제품으로 매주 혹은 격주로 배송해 드립니다.
+                        </p>
+                        <p>그 외에 특별히 원하는 원두가 있을 경우 000-0000-0000
+                            으로 전화주시면 도와드리겠습니다.
+                        </p>
+                    </div>
+                </li>
             </ul>
         </section>
 

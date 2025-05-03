@@ -72,7 +72,7 @@ div button:nth-child(2) {
 .add-email input {
   border: 0;
   outline: 0;
-  flex: 1;
+  flex: 100000;
   margin-left: 20px;
 }
 
@@ -214,8 +214,8 @@ section h3 {
 
  .card {
    /*<<<<== 요거 하면 이미지 자체가 안보이게 됨. */
-  border: 0;
-  outline: 0;
+  border: 2px solid green;
+  outline: 2px solid red;
   border-radius: 10px;
    background: linear-gradient(to bottom, rgba(25, 32, 68, 1) 0%,
  rgba(32, 19, 34, 1) 62%); 
@@ -252,6 +252,19 @@ section h3 {
     그 옆에 다른 요소가 올 수 있음.*/
   }
 } 
+
+/* ------------------FAQ 영역-------------------- */
+.faq .accordion {
+  width: 100%;
+  max-width: 750px;
+  margin: 60px auto;
+}
+
+.accordion li {
+  list-style: none;
+  width: 100%;
+  padding: 5px;
+}
 
 
 
