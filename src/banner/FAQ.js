@@ -56,6 +56,13 @@ function FAQ() {
                     </div>
                 </li>
             </ul>
+            <div className='newsletter'>
+                <p>이메일 주소를 보내시면 구독 안내문과 새로운 소식들을 보내 드립니다.</p>
+                <form className='add-email'>
+                    <input type='email' placeholder='이메일 주소' required></input>
+                    <button type='submit'>보내기</button>
+                </form>
+            </div>
         </section>
 
     );

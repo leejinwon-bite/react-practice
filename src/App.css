@@ -266,6 +266,50 @@ section h3 {
   padding: 5px;
 }
 
+.accordion li label { /*하위 선택자는 여러번 사용 가능한걸 알 수 있음.
+  또한 클래스 선택자이든 태그요소 선택자이든 순서는 상관없 는걸 알 수 있음.*/
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  font-size: 25px;
+  font-weight: 500; /*단위 px를 붙이면 적용 안됨.*/
+  background: #303030;
+  margin-bottom: 2px;
+  cursor: pointer;
+  position: relative; /*.accordion li label::after의 부모라는데,
+  왜 부모냐면 저 선택자는 label이 아닌 옆에 나오는 다른 +기호를 말하는 거임
+  +기호가 자식으로 됨.*/
+}
+
+.accordion input[type="radio"] {
+  display: none; /*라디오 버튼을 숨김*/
+}
+
+.accordion .content {
+  background: #3b3b3b;
+  font-size: 22px;
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.accordion li label::after {
+  content: '\2b'; /*라벨의 가상요소에 + 기호를 넣어줌*/
+  font-size: 40px;
+  position: absolute;
+  right: 20px;
+  transition: 0.5s;
+}
+
+.newsletter {
+  background: linear-gradient(to right, #651c3d 0%, #280a2b 60%);
+  padding: 40px;
+  margin-bottom: 40px;
+}
+
+
 
 
 /* .App {
