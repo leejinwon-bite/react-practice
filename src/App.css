@@ -309,6 +309,52 @@ section h3 {
   margin-bottom: 40px;
 }
 
+/* -------------------------푸터 영역 ------------------------ */
+footer {
+  padding: 60px 10%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 30px;
+  /* flex-wrap: wrap; */
+}
+
+.footer-content a {
+  color: rgba(247, 243, 12, 0.949);
+  font-size: 20px;
+  text-decoration: none; /*밑줄 없애기*/
+}
+
+.left {
+  flex-basis: 60%;
+}
+
+.center {
+  flex-basis: 20%;
+  vertical-align: top; /*수직 정렬*/
+}
+
+.col h2 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.col h3 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 26px;
+  max-resolution: 20px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
 
 
 

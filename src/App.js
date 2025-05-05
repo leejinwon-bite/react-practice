@@ -5,6 +5,7 @@ import Header from './header/Header.js';
 import Membership from './banner/Membership.js';
 import CardArea from './banner/CardArea.js';
 import FAQ from './banner/FAQ.js';
+import Footer from './footer/Footer.js';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Membership/>
       <CardArea/>
       <FAQ/>
+      <Footer/>
     </body>
     // <div className="App">
     //   <header className="App-header">
