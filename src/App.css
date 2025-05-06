@@ -311,7 +311,7 @@ section h3 {
 
 /* -------------------------푸터 영역 ------------------------ */
 footer {
-  padding: 60px 10%;
+  padding: 60px 20px;
 }
 
 .footer-content {
@@ -319,7 +319,7 @@ footer {
   justify-content: space-between;
   align-items: start;
   gap: 30px;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap; /*custom*/
 }
 
 .footer-content a {
@@ -329,12 +329,11 @@ footer {
 }
 
 .left {
-  flex-basis: 60%;
-}
-
-.center {
-  flex-basis: 20%;
-  vertical-align: top; /*수직 정렬*/
+  flex-basis: 100%;
+  display: flex; /*custom*/
+  justify-content: space-between; /*custom*/
+  gap: 20px; /*custom*/
+  flex-wrap: wrap;
 }
 
 .col h2 {
@@ -353,6 +352,57 @@ footer {
   display: flex;
   justify-content: start;
   align-items: center;
+  gap: 10px;
+  list-style: none; /*list 스타일 없애기*/
+  margin-bottom: 40px;
+}
+
+.footer-nav li:not(:last-child) {
+  border-right: 1px solid #eee; /*마지막 li를 제외하고는 오른쪽에 */
+  padding-right: 10px; /*custom*/
+}
+
+.footer-info {
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.socials {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  list-style: none; /*list 스타일 없애기*/
+}
+
+.socials a {
+  font-size: 16px;
+}
+
+.copyright {
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
+
+.footer-content p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* -----------반응형 푸터 ------------------- */
+@media all and (max-width: 500px) {
+  .center {
+    flex-basis: 100%;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 1440px) {
+  .center {
+    flex-basis: calc(50%-15px); /* calc에 50%만 들어가면, 요소가
+    2개나 3개로 배치가 안떨어지는 것을 볼 수 있음. 단 1px이라도 작아지면
+    그 옆에 다른 요소가 올 수 있음.*/
+  }
 }
 
 
