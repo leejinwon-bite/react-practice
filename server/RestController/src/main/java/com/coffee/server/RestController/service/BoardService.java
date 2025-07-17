@@ -11,10 +11,12 @@ public class BoardService {
 
     private final BoardRepository boardRepository;
 
-    public void save(BoardDTO boardDTO) {
+    public Long save(BoardDTO boardDTO) {
 
 
             boardRepository.save(boardDTO);
+
+            return boardDTO.getId();
 
         }
 
