@@ -36,7 +36,7 @@ const Footer = () => {
                             </div>
                             <div className='col center'>
                                 <h2>커뮤니티</h2>
-                                <p><a href='#'>공지사항</a></p>
+                                <p><a href='/notice'>공지사항</a></p>
                                 <p><a href='#'>이벤트</a></p>
                                 <p><a href='#'>상품 Q&A</a></p>
                             </div>

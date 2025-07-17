@@ -12,6 +12,7 @@ const BannerL = () => {
                 <option value='light'>라이트 로스트</option>
                 <option value='medium'>미디엄 로스트</option>
                 <option value='dark'>다크 로스트</option>
+                <option value='shit'>고양이 똥 로스트</option>
             </select>
         </section>
     );
