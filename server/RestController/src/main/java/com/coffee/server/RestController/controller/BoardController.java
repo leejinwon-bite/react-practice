@@ -33,4 +33,12 @@ public class BoardController {
         // Logic to save a board can be added here
         // For example, you can call boardService.save() with appropriate parameters
     }
+
+    @GetMapping("/{id}")
+    public BoardDTO findById(@PathVariable Long id) {
+        log.info("Find by ID method called with ID: " + id);
+        BoardDTO boardDTO = boardService.findById(id);
+        log.info("Retrieved BoardDTO: " + boardDTO);
+        return boardDTO; // This will return the BoardDTO object as JSON
+    }
 }

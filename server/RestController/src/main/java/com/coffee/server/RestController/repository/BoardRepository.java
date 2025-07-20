@@ -22,4 +22,10 @@ public class BoardRepository {
         // 이건 연관관계 매핑입니다. 조인했다고 볼 수 있음. 게시판 관련 테이블의 Pk를
         // 파일첨부 테이블의 외래키 FK 로 설정하는 것과 비슷합니다.
     }
+
+    public BoardDTO findById(Long id) {
+        return sql.selectOne("Board.findById", id); // mybatis의 xml 파일에 있는 쿼리문을 실행합니다.
+        // selectOne 메서드는 단일 결과를 반환하는 쿼리를 실행할 때 사용됩니다.
+        // "Board.findById"는 mybatis의 board-mapper.xml 파일에서 특정 게시글을 조회하는 SQL ID를 나타냅니다.
+    }
 }

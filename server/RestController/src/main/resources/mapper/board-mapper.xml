@@ -18,4 +18,10 @@
         #{fileAttached}
         );
     </insert>
+
+    <select id="findById" parameterType="Long" resultType="board">
+        select id, boardTitle, boardContents, boardWriter,
+        date_format(createdAt, "%Y-%m-%d %H:%i:%s") as createdAt, fileAttached
+        from board_table where id = #{id};
+    </select>
 </mapper>
