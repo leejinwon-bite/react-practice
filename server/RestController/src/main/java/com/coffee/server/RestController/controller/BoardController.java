@@ -41,4 +41,20 @@ public class BoardController {
         log.info("Retrieved BoardDTO: " + boardDTO);
         return boardDTO; // This will return the BoardDTO object as JSON
     }
+
+    @PutMapping("/{id}")
+    public Map<String, String> update(@PathVariable Long id, @RequestBody BoardDTO boardDTO) {
+        log.info("Update method called with ID: " + id);
+        log.info("BoardDTO to update: " + boardDTO);
+        boardDTO.setId(id); // Set the ID for the board to be updated
+        boardService.update(boardDTO);
+        return Map.of("message", "Board updated successfully");
+    }
+
+    @DeleteMapping("/{id}")
+    public Map<String, String> delete(@PathVariable Long id) {
+        log.info("Delete method called with ID: " + id);
+        boardService.delete(id);
+        return Map.of("message", "Board deleted successfully");
+    }
 }

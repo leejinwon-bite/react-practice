@@ -28,4 +28,12 @@ public class BoardRepository {
         // selectOne 메서드는 단일 결과를 반환하는 쿼리를 실행할 때 사용됩니다.
         // "Board.findById"는 mybatis의 board-mapper.xml 파일에서 특정 게시글을 조회하는 SQL ID를 나타냅니다.
     }
+
+    public void update(BoardDTO boardDTO) {
+        sql.update("Board.update", boardDTO);
+    }
+
+    public void delete(Long id) {
+        sql.delete("Board.delete", id);
+    }
 }
