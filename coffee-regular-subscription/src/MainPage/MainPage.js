@@ -9,14 +9,14 @@ import Footer from '../footer/Footer.js';
 const MainPage = () => {
 
     return (
-      <body>
+      <div>
         <Header/>
         <BannerL/>
         <Membership/>
         <CardArea/>
         <FAQ/>
         <Footer/>
-      </body>
+      </div>
     );
 }
 

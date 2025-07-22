@@ -4,7 +4,8 @@ const BoardSave = () => {
 
     return(
        <section> 
-            <form action="/saveToDB" method="post" enctype="multipart/form-data">
+        {/* @RestController의 상대경로로 넘어감. */}
+            <form action="/save" method="post" enctype="multipart/form-data">
                 Title: <input type="text" name="boardTitle" required /><br />
                 Writer: <input type="text" name="boardWriter" required /><br />
                 Contents: <input type="text" name="boardContents" required /><br />

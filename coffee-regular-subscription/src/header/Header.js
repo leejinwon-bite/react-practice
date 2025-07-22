@@ -18,7 +18,7 @@ const Header = () => {
           <h2>매일 특별한 커피 타임</h2>
           <h3>고객님의 취향에 맞게 스페셜 커피를 즐겨 보세요</h3>
           <p>이메일 주소를 보내시면 구독 안내문과 새로운 소식들을 보내 드립니다.</p>
-          <form className='add-email'>
+          <form className='add-email' action="/emailSave" method="post">
             <input type='email' placeholder='이메일 주소' required></input>
             <button type='submit'>궁금해용</button>
           </form>

@@ -7,9 +7,11 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode> 가 저절로 <App />을 감싸는데, 이게 있으면 
+  // 개발 모드에서 두 번 렌더링이 되어서, 개발 중에 console.log가 
+  // 두 번 출력되는 현상이 발생함.
+  // 그래서 이걸 제거함.
     <App />
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

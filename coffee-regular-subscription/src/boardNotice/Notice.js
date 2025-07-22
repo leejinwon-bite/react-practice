@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom"
 import { useCallback } from "react";
 import { Outlet } from "react-router-dom";
 
-
 const Notice = () => {
 
+    // 비동기 방식으로 페이지를 이동하기 위해 useNavigate 훅을 사용합니다.
     const navigate = useNavigate()
     const handleClickList = useCallback(() => {
     navigate({ pathname: 'save' })

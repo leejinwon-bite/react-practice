@@ -5,7 +5,7 @@ import noticeRouter from "./noticeRouter"; // Assuming noticeRouter is a functio
 const Loading = <div>Loading....</div>
 const Main = lazy(() => import("../MainPage/MainPage.js"));
 const Notice = lazy(() => import("../boardNotice/Notice.js"));
-const Detail = lazy(() => import("../boardNotice/detail.js"));
+const Detail = lazy(() => import("../boardNotice/Detail.js"));
 
 
 const root = createBrowserRouter([
@@ -23,7 +23,7 @@ const root = createBrowserRouter([
         // 그래서 <Outlet />을 사용함. 만약 다른 페이지로 구성하고 싶으면 밑에처럼 하면됨.
     },
     {
-        path:"notice/detail",
+        path:"notice/detail/:id",
         element: <Suspense fallback={Loading}><Detail /></Suspense>
     }
 
