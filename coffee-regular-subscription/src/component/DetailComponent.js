@@ -36,6 +36,7 @@ function DetailComponent({ id }) {
   }
 
   const {moveToList} = CustomMove();
+  const {moveToModify} = CustomMove();
 
   return (
    <div>
@@ -54,7 +55,9 @@ function DetailComponent({ id }) {
         {makeDiv('createdAt', board.createdAt)}
         {makeDiv('fileAttached', board.fileAttached)}
 
+{/* hook에 있는 이동함수임. page, size파라메터를 포함함. */}
         <button onClick={()=>{moveToList()}}>Notice</button>
+        <button onClick={()=>{moveToModify(board.id)}}>Modify</button>
    </div>
   )
 }

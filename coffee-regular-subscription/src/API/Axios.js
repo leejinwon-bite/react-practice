@@ -11,3 +11,18 @@ export const getBoardDTO = async (id) => {
   // server RestController에서 return되는 애들이 data임.
   return result.data;
 }
+
+export const getPaging = async (pageParam) => {
+  // url의 parameters에서 온 애들임.
+    const { page, size } = pageParam
+  const result = await axios.get(`${prefix}/list`, { params: { page: page, size: size } });
+  console.log("data 출력 =", result.data);
+  return result.data
+}
+
+export const saveBoard = async (board) => {
+  const result = await axios.post(
+    `${prefix}/save`, board 
+  );
+  return result.data;
+}

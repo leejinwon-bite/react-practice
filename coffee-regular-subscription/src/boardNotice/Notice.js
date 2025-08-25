@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { useCallback } from "react";
 import { Outlet } from "react-router-dom";
+import NoticeComponent from "../component/NoticeComponent";
 
 const Notice = () => {
 
@@ -20,27 +21,7 @@ const Notice = () => {
                 <p>This is the notice board where you can find important announcements and updates.</p>
             </div>
 
-            <h2>글 목록</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>번호</th>
-                            <th>제목</th>
-                            <th>작성자</th>
-                            <th>작성일</th>
-                            <th>조회수</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td><a></a></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <NoticeComponent />
 
             <div onClick={handleClickList}>게시글 작성</div>
             <Outlet/ ><br /><br />

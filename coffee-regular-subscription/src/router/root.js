@@ -6,6 +6,7 @@ const Loading = <div>Loading....</div>
 const Main = lazy(() => import("../MainPage/MainPage.js"));
 const Notice = lazy(() => import("../boardNotice/Notice.js"));
 const Detail = lazy(() => import("../boardNotice/Detail.js"));
+const Modify = lazy(() => import("../boardNotice/Modify.js"));
 
 
 const root = createBrowserRouter([
@@ -25,6 +26,10 @@ const root = createBrowserRouter([
     {
         path:"notice/detail/:id",
         element: <Suspense fallback={Loading}><Detail /></Suspense>
+    },
+    {
+        path:"notice/modify/:id",
+        element: <Suspense fallback={Loading}><Modify /></Suspense>
     }
 
     ])
