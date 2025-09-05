@@ -15,7 +15,7 @@ export const getBoardDTO = async (id) => {
 export const getPaging = async (pageParam) => {
   // url의 parameters에서 온 애들임.
     const { page, size } = pageParam
-  const result = await axios.get(`${prefix}/list`, { params: { page: page, size: size } });
+  const result = await axios.get(`${prefix}/list`, { params: {page, size} });
   console.log("data 출력 =", result.data);
   return result.data
 }

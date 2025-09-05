@@ -12,5 +12,7 @@ type="com.codingrecipe.board.dto.BoardDT" alias="board"에 대해서 해석: typ
 parameterType="board"과 매핑됨. 이 의미는 설정코드랑 쿼리작성 파일이랑 연결 시킨거임.
 이렇게 하는 이유는 DTO 클래스의 경로가 길기 때문에 짧게 하기 위해서임.
 -->
+        <typeAlias type="com.coffee.server.RestController.dto.PageResponseDTO" alias="PageResponse" />
+        <typeAlias type="com.coffee.server.RestController.dto.PageRequestDTO" alias="PageRequest" />
     </typeAliases>
 </configuration>

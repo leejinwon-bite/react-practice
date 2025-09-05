@@ -36,6 +36,8 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+//	pageHelper 의존성 버전이 1.4.3이면 완전 엉터리가 됨. 작동하긴함. 근데 저 버전은 AI가 나한테 준거임 ㅡ.ㅡ AI는 어쩔땐 엉터리임 명심.
+	implementation 'com.github.pagehelper:pagehelper-spring-boot-starter:1.4.6'
 }
 
 //implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'

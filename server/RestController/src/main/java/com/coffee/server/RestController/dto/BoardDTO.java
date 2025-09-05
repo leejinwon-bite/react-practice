@@ -1,15 +1,11 @@
 package com.coffee.server.RestController.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-@Getter
-@Setter
-@ToString
+@Data
 public class BoardDTO {
 
     private Long id;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getPaging } from "../API/Axios";
 import CustomMove from "../hook/CustomMove";
+import PagingComponent from "./PagingComponent";
 
 const initState = {
   // dtoList: [],
@@ -20,10 +21,11 @@ const initState = {
   // totalPage: 0,
   pages: 0,
   // current: 0
-  pageNum: 0
+  pageNum: 0,
+  size: 0
 }
 const NoticeComponent = () => {
-  const { page, size } = CustomMove();
+  const { page, size, moveToList } = CustomMove();
   const [pagingVariables, setPagingVariables] = useState(initState)
   useEffect(() => {
     getPaging({ page, size }).then(data => {
@@ -43,8 +45,11 @@ const NoticeComponent = () => {
               <hr />
             </div>
           ))
+          
         }
       </div>
+      <PagingComponent pagingVariables={pagingVariables}
+       moveToList={moveToList} />
     </section>
   )
 }

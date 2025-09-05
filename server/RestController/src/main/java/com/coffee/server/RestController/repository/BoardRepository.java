@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Repository
 public class BoardRepository {
@@ -35,5 +37,12 @@ public class BoardRepository {
 
     public void delete(Long id) {
         sql.delete("Board.delete", id);
+    }
+
+    public List<BoardDTO> getList() {
+        // Implement pagination logic here
+        // This method should return a PageResponseDTO containing a list of BoardDTOs
+        // based on the provided PageRequestDTO
+        return sql.selectList("Board.getList"); // Example implementation
     }
 }
