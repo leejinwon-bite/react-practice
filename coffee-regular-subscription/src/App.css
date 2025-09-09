@@ -323,7 +323,7 @@ footer {
   flex-wrap: wrap; /*custom*/
 }
 
-.footer-content a {
+.link {
   color: rgba(247, 243, 12, 0.949);
   font-size: 20px;
   text-decoration: none; /*밑줄 없애기*/
@@ -375,7 +375,7 @@ footer {
   list-style: none; /*list 스타일 없애기*/
 }
 
-.socials a {
+.socials .link {
   font-size: 16px;
 }
 

@@ -9,36 +9,36 @@ const PagingComponent = ({ pagingVariables, moveToList }) => {
         pagingVariables.hasPreviousPage ?
           <div
             onClick={() => moveToList({
-              page: pagingVariables.hasPreviousPage,
-              size: pagingVariables.navigatePages
+              page: pagingVariables.prePage,
+              size: pagingVariables.pageSize
             })}
           >Prev</div> :
           <></>
       }
-      {/* {
-        serverData.pageNumList.map(pageNum =>
+      {
+        pagingVariables.navigatepageNums.map(pageNum =>
           <div
             key={pageNum}
-            className={`m-2 p-2 w-12 text-center rounded shadow-md text-white
-              ${serverData.current === pageNum ? 'bg-gray-500' : 'bg-blue-400'}`}
-            onClick={() => movePage({
+            onClick={() => moveToList({
+              // map을 통해서 나온 숫자들은 onClick 함수의 pageNum에
+              //  들어가서 저장이 되어있음. 그래서 눌르면 알아서 해당페이지로
+              // 이동함.
               page: pageNum,
-              size: serverData.pageRequestDTO.size
+              size: pagingVariables.pageSize
             })}
           >{pageNum}</div>
         )
       }
       {
-        serverData.next ?
+        pagingVariables.hasNextPage ?
           <div
-            className="m-2 p-2 w-16 text-center font-bold text-blue-400"
-            onClick={() => movePage({
-              page: serverData.nextPage,
-              size: serverData.pageRequestDTO.size
+            onClick={() => moveToList({
+              page: pagingVariables.nextPage,
+              size: pagingVariables.pageSize
             })}
           >Next</div> :
           <></>
-      } */}
+      }
     </div>
   )
 }

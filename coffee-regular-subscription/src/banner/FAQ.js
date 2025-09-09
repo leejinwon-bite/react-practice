@@ -7,7 +7,17 @@ function FAQ() {
             <ul className='accordion'>
                 <li>
                     <input type='radio' name='accordion' id='first'></input>
-                    <label for='first'>주문은 어떻게 하나요?</label>
+                    {/* for를 input의 속성으로 쓰면 경고가 남.
+in React (JSX), for is a reserved JavaScript keyword, so React uses htmlFor to avoid conflicts:
+<label htmlFor="email">Email</label>
+✅ How to Fix It
+Just update your JSX like this:
+// ❌ Incorrect
+<label for="email">Email</label>
+// ✅ Correct
+<label htmlFor="email">Email</label>
+ */}
+                    <label htmlFor='first'>주문은 어떻게 하나요?</label>
                     <div className='content'>
                         <p>스위커 온라인몰에서 주문하셔도 되고, 000-
                             0000-0000으로 전화해서 궁금한 것들을 확인한
@@ -17,7 +27,7 @@ function FAQ() {
                 </li>
                 <li>
                     <input type='radio' name='accordion' id='second'></input>
-                    <label for='second'>주문 용량은 어떻게 되나요?</label>
+                    <label htmlFor='second'>주문 용량은 어떻게 되나요?</label>
                     <div className='content'>
                         <p>고객님의 취향에 맞는 커피를 매주 또는 격주로 배송합니다.
                             주문 용량은 원두별로 100g씩, 200g씩 필요한 양을 주문
@@ -33,7 +43,7 @@ function FAQ() {
                 </li>
                 <li>
                     <input type='radio' name='accordion' id='third'></input>
-                    <label for='third'>언제 배송되나요?</label>
+                    <label htmlFor='third'>언제 배송되나요?</label>
                     <div className='content'>
                         <p>매주 목요일에 배송 출발합니다. 제주도내는 금요일에
                             받으실 수 있고 도외는 토요일에 받으실 수 있습니다.
@@ -45,7 +55,7 @@ function FAQ() {
                 </li>
                 <li>
                     <input type='radio' name='accordion' id='fourth'></input>
-                    <label for='fourth'>원두 추천해 줄 수 있나요?</label>
+                    <label htmlFor='fourth'>원두 추천해 줄 수 있나요?</label>
                     <div className='content'>
                         <p>'로스터가 추천하는 커피'를 선택하시면 고객님과 상담후
                             고객님께 맞는 제품으로 매주 혹은 격주로 배송해 드립니다.

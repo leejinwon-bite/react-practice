@@ -25,8 +25,8 @@ function DetailComponent({ id }) {
     })
   }, [id])
 
-  {/* html요소를 반복적으로 만들때 함수를 이용한것 1, 2번 매개는 각각
-    return문에 나오는 애들하고 매핑된 애들임. */}
+  /* html요소를 반복적으로 만들때 함수를 이용한것 1, 2번 매개는 각각
+    return문에 나오는 애들하고 매핑된 애들임. */
   const makeDiv = (key, value) => {
     return (
       <div>

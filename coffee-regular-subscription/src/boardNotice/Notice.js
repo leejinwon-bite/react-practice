@@ -9,10 +9,10 @@ const Notice = () => {
     const navigate = useNavigate()
     const handleClickList = useCallback(() => {
     navigate({ pathname: 'save' })
-  })
+  }, [navigate])
     const handleClickDetail = useCallback(() => { 
     navigate({ pathname: 'detail' })
-    })
+    }, [navigate])
 
     return (
         <section>

@@ -3,19 +3,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faSquareFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faYoutube } from '@fortawesome/free-brands-svg-icons'
-
+import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 
 const Footer = () => {
+
+    const navigate = useNavigate()
+    const handleClickDetail = useCallback(() => { 
+      navigate({ pathname: 'detail' })
+      }, [navigate])
+    const hadleClickNotice = useCallback(() => { 
+      navigate({ pathname: 'notice' })
+      }, [navigate])  
+
     return (
         <footer>
            <div className='footer-content'>
                 <div className='col left'>
                             <div className='col center'> {/*custom*/}
                                 <ul className='footer-nav'>
-                                    <li><a href='#'>매장안내</a></li>
-                                    <li><a href='#'>이용약관</a></li>
-                                    <li><a href='#'>개인정보 취급방침</a></li>
-                                    <li><a href='#'>이용안내</a></li>
+                                    <li><div className='link' onClick={handleClickDetail}>매장안내</div></li>
+                                    <li><div className='link' onClick={handleClickDetail}>이용약관</div></li>
+                                    <li><div className='link' onClick={handleClickDetail}>개인정보 취급방침</div></li>
+                                    <li><div className='link' onClick={handleClickDetail}>이용안내</div></li>
                                 </ul>
                                 <ul className='footer-info'>
                                     <p>상호: 섹시와보이시 (대표 : 홍길동)</p>
@@ -29,16 +39,17 @@ const Footer = () => {
                                 <h3>070-000-0000</h3>
                                 <p>월~금 09:00 - 18:00</p>
                                 <ul className='socials'>
-                                    <li><a href="#"><FontAwesomeIcon icon={faInstagram} /></a></li>
-                                    <li><a href="#"><FontAwesomeIcon icon={faSquareFacebook} /></a></li>
-                                    <li><a href="#"><FontAwesomeIcon icon={faYoutube} /></a></li>
+                                    <li><div className='link' onClick={handleClickDetail}><FontAwesomeIcon icon={faInstagram} /></div></li>
+                                    <li><div className='link' onClick={handleClickDetail}><FontAwesomeIcon icon={faSquareFacebook} /></div></li>
+                                    <li><div className='link' onClick={handleClickDetail}><FontAwesomeIcon icon={faYoutube} /></div></li>
                                 </ul>
                             </div>
                             <div className='col center'>
                                 <h2>커뮤니티</h2>
-                                <p><a href='/notice'>공지사항</a></p>
-                                <p><a href='#'>이벤트</a></p>
-                                <p><a href='#'>상품 Q&A</a></p>
+                                <p><span className='link' onClick={hadleClickNotice}>공지사항</span></p>
+                                {/* <p><a href='../notice' className='link'>공지사항</a></p> */}
+                                <p><span className='link' onClick={handleClickDetail}>이벤트</span></p>
+                                <p><span className='link' onClick={handleClickDetail}>상품 Q&A</span></p>
                             </div>
                 </div>
                 <div className='copyright'>
