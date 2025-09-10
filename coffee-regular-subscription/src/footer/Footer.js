@@ -47,6 +47,7 @@ const Footer = () => {
                             <div className='col center'>
                                 <h2>커뮤니티</h2>
                                 <p><span className='link' onClick={hadleClickNotice}>공지사항</span></p>
+                                {/* 밑에 코드는 css를 부모로 부터 상속 안해서 흰색 배경이 나옴. 위에껀 빨간색 글자, 검정 배경 상속 */}
                                 {/* <p><a href='../notice' className='link'>공지사항</a></p> */}
                                 <p><span className='link' onClick={handleClickDetail}>이벤트</span></p>
                                 <p><span className='link' onClick={handleClickDetail}>상품 Q&A</span></p>

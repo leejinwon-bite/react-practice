@@ -37,16 +37,24 @@ const NoticeComponent = () => {
   }, [page, size])
 
   const navigate = useNavigate()
-  const handleClickDetail = useCallback(() => { 
-      navigate({ pathname: 'detail' })
+  // useCallback매개에 id라는 매개를 넣음. event를 했을 경우엔 url에 undefined가 들어감.
+  const handleClickDetail = useCallback((id) => { 
+      navigate({ pathname: `detail/${id}` })
       }, [navigate])
   return (
     <section>
       <div>
         {
           pagingVariables.list.map((board) => (
-            <div key={board.id}>
-              <span onClick={handleClickDetail}>제목: {board.boardTitle} </span>
+            // Yes, onClick={() => handleClickDetail(board.id)} creates a new function each render. 
+            //  Use this when:
+// - You need to pass custom arguments to the handler.
+// - You want to wrap logic or conditionals before calling the actual function.
+            <div key={board.id} onClick={ () => {
+              handleClickDetail(board.id); 
+              console.log("board.id =", board.id);
+              } }>
+              <span>제목: {board.boardTitle} </span>
               <span>글쓴이: {board.boardWriter} </span>
               <span>만든시간: {board.createdAt} </span>
               <span>첨부파일: {board.fileAttached} </span>

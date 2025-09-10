@@ -10,22 +10,26 @@ const Notice = () => {
     const handleClickList = useCallback(() => {
     navigate({ pathname: 'save' })
   }, [navigate])
-    const handleClickDetail = useCallback(() => { 
-    navigate({ pathname: 'detail' })
-    }, [navigate])
+    const handleClickHome = useCallback(() => {
+        navigate({ pathname: '/' })
+      }, [navigate])
 
     return (
         <section>
             <div>
-                <h1>Notice Board</h1>
-                <p>This is the notice board where you can find important announcements and updates.</p>
+                <h1 onClick={handleClickHome}>원두정기구독</h1>
             </div>
+            <div>
+                <div>
+                    <h1>Notice Board</h1>
+                    <p>This is the notice board where you can find important announcements and updates.</p>
+                </div>
 
-            <NoticeComponent />
+                <NoticeComponent />
 
-            <div onClick={handleClickList}>게시글 작성</div>
-            <Outlet/ ><br /><br />
-            <div onClick={handleClickDetail}>게시글 상세보기</div>
+                <div onClick={handleClickList}>게시글 작성</div>
+                <Outlet/ ><br /><br />
+            </div>
             
         </section>    
     );
