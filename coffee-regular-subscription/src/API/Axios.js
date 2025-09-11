@@ -30,3 +30,10 @@ export const saveBoard = async (board) => {
   );
   return result.data;
 }
+
+export const modifyBoard = async (board) => {
+  const result = await axios.put(
+    `${prefix}/${board.id}`, board
+  );
+  return result.data;
+} 

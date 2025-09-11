@@ -8,8 +8,8 @@ const Notice = () => {
     // 비동기 방식으로 페이지를 이동하기 위해 useNavigate 훅을 사용합니다.
     const navigate = useNavigate()
     const handleClickList = useCallback(() => {
-    navigate({ pathname: 'save' })
-  }, [navigate])
+        navigate({ pathname: 'save' })
+      }, [navigate])
     const handleClickHome = useCallback(() => {
         navigate({ pathname: '/' })
       }, [navigate])

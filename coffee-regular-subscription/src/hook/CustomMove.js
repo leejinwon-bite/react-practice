@@ -66,10 +66,7 @@ const CustomMove = () => {
   const moveToModify = (id) => {
     console.log(queryDefault)
     navigate({
-      pathname: `../notice/modify/${id}`,
-      // queryDefault는 page, size가 포함된 URL의 parameters임.
-      // 이걸로 이동하면 page, size가 유지됨. 수정시 기존 페이지로 갈려고 만듬.
-      search: queryDefault 
+      pathname: `../notice/modify/${id}`
     })
   }
 

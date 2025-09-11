@@ -26,7 +26,9 @@
     </select>
 
     <update id="update" parameterType="board">
-        update board_table set boardTitle=#{boardTitle}, boardContents=#{boardContents}, createdAt=now() where
+        update board_table set boardTitle=#{boardTitle}, boardWriter=#{boardWriter}, boardContents=#{boardContents},
+        createdAt=now()
+        where
         id = #{id}
     </update>
 

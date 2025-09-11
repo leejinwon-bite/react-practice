@@ -52,6 +52,7 @@ public class BoardService {
 
 
         PageInfo<BoardDTO> pageInfo = new PageInfo<>(list, 10); // 10은 View page에서 보여줄 페이지 번호의 개수입니다.
+//        console에서는 navigatesPages
         return pageInfo; // Placeholder return statement, implement actual logic
     }
 
