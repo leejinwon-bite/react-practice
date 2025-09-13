@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
-import { getBoardDTO, modifyBoard } from '../API/Axios';
+import { deleteBoard, getBoardDTO, modifyBoard } from '../API/Axios';
 import { useParams } from 'react-router-dom';
+import MDModal from '../component/common/MDModal';
+import CustomMove from '../hook/CustomMove';
+import ConfirmModal from '../component/common/ConfirmModal';
 
 const initState = {
   id: 0,
@@ -20,6 +23,9 @@ const Modify = () => {
     // 없고, prop으로 넘겨준적도 없었었음. 햇갈리니 주의.
     const { id } = useParams();
     const [board, setBoard] = useState(initState);
+    const [result, setResult] = useState(null);
+    const {moveToList, moveToRead} = CustomMove();
+    const [confirm, setConfirm] = useState(false);
 
     useEffect(() => {
         getBoardDTO(id).then(data => {
@@ -32,7 +38,27 @@ const handleModify = (event) => {
   event.preventDefault();
   // Your Axios PUT logic here
   modifyBoard(board);
+  setResult('Modfied');
 };
+
+const handleDelete = (event) => {
+  event.preventDefault();
+  deleteBoard(board.id);
+  setResult('Deleted');
+}
+
+ const closeModal = () => {
+    if (result === 'Deleted') {
+      moveToList()
+    } else {
+      moveToRead(id)
+    }
+  }
+
+  const handleConfirm = (event) => {
+    event.preventDefault();
+    setConfirm(true);
+  }
 
 
 
@@ -41,10 +67,20 @@ const handleModify = (event) => {
             <div>
                 <h1>Modify</h1>
                 <p>hello world!!</p>
+                {
+                    result ?
+                    <MDModal title={'처리결과'} content={result} closeFunction={closeModal}/>
+                : <></>
+                }
+                {
+                  confirm ? 
+                  <ConfirmModal closeFunction={handleDelete}/> 
+                  : <></>
+                }
                 {/* form에서는 put 방식의 method 속성값을 사용못함.
                 대신 get으로 자동으로 변환됨. onSubmit을 사용해서
                 수정을한다. */}
-                    <form onSubmit={handleModify}>
+                    <form>
                        id: <input type="number" name="id" value={board.id} readOnly/><br />
                       boardTitle: <input type="text" name="boardTitle" value={board.boardTitle}
                          onChange={event => {
@@ -61,8 +97,12 @@ const handleModify = (event) => {
                             console.log(event.target.value);
                             setBoard({ ...board, boardContents: event.target.value });
                         }}/><br />
-                        <input type="submit" value="Modify" />
-                        <input type="submit" value="Delete" />
+                        <button onSubmit={handleModify}>Modify</button>
+                        {/* setConfirm을 이벤트 함수 내에 쓰고 싶었지만,
+                        그렇게 했을경우 state가 바뀌면 랜더링 되기 때문에, 모달창이
+                        잠깐 나오다가 다시 페이지가 새로고침되서 사라짐. 그래서
+                        따로 위에 함수 형식으로 만듬. */}
+                        <button onClick={handleConfirm}>delete</button>
                     </form>
             </div>
         </section>

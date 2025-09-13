@@ -37,3 +37,9 @@ export const modifyBoard = async (board) => {
   );
   return result.data;
 } 
+
+export const deleteBoard = async (id) => {
+  const result = await axios.delete(
+    `${prefix}/${id}`);
+    return result.data;
+}

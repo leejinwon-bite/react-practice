@@ -70,10 +70,17 @@ const CustomMove = () => {
     })
   }
 
+  const moveToRead = (id) => {
+    console.log(queryDefault)
+    navigate({
+      pathname: `../notice/detail/${id}`,
+    })
+  }
+
   // moveToList 함수는 페이지와 크기를 매개변수로 받아서,
   // page, size는 URL의 parameters에서 받음.
   // 이 return 값은 다른 컴포넌트에서 소환될 수 있음. 포켓몬임.
-   return { moveToList, page, size, moveToModify };
+   return { moveToList, page, size, moveToModify, moveToRead };
 
 }
 
